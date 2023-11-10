@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/call/api', [GameController::class, 'callApi'])->name('game.index');
+Route::get('/start/game', [GameController::class, 'startGame'])->name('game.index');
