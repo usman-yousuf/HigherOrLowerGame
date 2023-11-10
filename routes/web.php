@@ -18,6 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/start/game', [GameController::class, 'startGame'])->name('startGame');
+Route::get('/start-game', [GameController::class, 'startGame'])->name('startGame');
 
-Route::post('/game', [GameController::class, 'makeGuess'])->name('makeGuess');
+Route::post('/make-guess', [GameController::class, 'makeGuess'])->name('makeGuess');

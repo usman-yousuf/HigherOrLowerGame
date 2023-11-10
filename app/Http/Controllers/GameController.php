@@ -60,9 +60,12 @@ class GameController extends Controller
 
         } else {
             
-            return "this is not correct guess";
+            // Game over, reset the deck and correct guesses counter
+            $request->session()->forget('deck');
+            $request->session()->forget('correct_guesses');
+            return redirect()->route('startGame');
         }
     
-        return redirect()->route('game')->with(['currentCard' => $nextCard, 'correctGuesses' => $correctGuesses]);
+        return redirect()->route('startGame')->with(['currentCard' => $nextCard, 'correctGuesses' => $correctGuesses]);
     }
 }
