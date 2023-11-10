@@ -14,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/start-game', [GameController::class, 'startGame'])->name('startGame');
+Route::get('/', [GameController::class, 'startGame'])->name('startGame');
 
 Route::post('/make-guess', [GameController::class, 'makeGuess'])->name('makeGuess');
